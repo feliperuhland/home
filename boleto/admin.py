@@ -2,7 +2,7 @@
 
 from django.contrib import admin
 
-from core.models import (
+from boleto.models import (
     Account,
     Bank,
     Benefited,
@@ -14,7 +14,7 @@ from core.models import (
 
 @admin.register(Account)
 class AccountAdmin(admin.ModelAdmin):
-    list_display = ('name', 'bank', 'user', 'created', 'modified')
+    list_display = ('name', 'bank', 'user', 'spent', 'created', 'modified')
 
 
 @admin.register(Bank)
@@ -44,4 +44,4 @@ class BenefitedAdmin(admin.ModelAdmin):
 
 @admin.register(Payment)
 class PaymentAdmin(admin.ModelAdmin):
-    list_display = ('bill', 'paid_account', 'date', 'created', 'modified')
+    list_display = ('bill', 'paid_account', 'total_value', 'date', 'created', 'modified')
